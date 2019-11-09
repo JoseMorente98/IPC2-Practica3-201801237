@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start" >
+      <ion-icon name="arrow-back" slot="icon-only" (click)="goToBack()"></ion-icon>
+    </ion-buttons>
+    <ion-title style="font-family: 'Baloo';">
+      Mensajes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="msg_history">
+    <div *ngFor="let item of table">
+      <div *ngIf="item.estado != 1">
+        <div class="incoming_msg" *ngIf="item.idUsuario1!=usuarioId">
+          <div class="received_msg">
+            <div class="received_withd_msg">
+              <p>{{item.cuerpo}}</p>
+              <span class="time_date">{{item.fecha | date: 'medium'}}</span>
+              <span class="time_date" *ngIf="item.leido==0">No Leído</span>
+              <span class="time_date" *ngIf="item.leido==1">Leído {{item.fechaLeido | date: 'short'}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="item.estado != 1">
+        <div class="outgoing_msg" *ngIf="item.idUsuario1==usuarioId">
+          <div class="sent_msg">
+            <p (click)="presentActionSheet(item.idMensaje)">{{item.cuerpo}}</p>
+            <span class="time_date">{{item.fecha | date: 'medium'}}</span>
+            <span class="time_date" *ngIf="item.leido==0">No Leído</span>
+            <span class="time_date" *ngIf="item.leido==1">Leído {{item.fechaLeido | date: 'short'}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div class="type_msg">
+    <div class="input_msg_write">
+      <ion-item color="transparent">
+        <ion-input  maxlength="255" type="text" [(ngModel)]="data.cuerpo" name="cuerpo" placeholder="Escribir Mensaje"></ion-input>
+      </ion-item>
+      <button class="msg_send_btn" type="button" (click)="sendMessage()">      
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </div>
+  </div>
+</ion-footer>

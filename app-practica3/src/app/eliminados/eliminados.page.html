@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Eliminados
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let item of table">
+    <ion-card-header>
+      <ion-card-subtitle><ion-icon name="person"></ion-icon>  Emisor: {{item.Emisor}}</ion-card-subtitle>
+      <ion-card-subtitle><ion-icon name="person"></ion-icon>  Receptor: {{item.Receptor}}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{item.cuerpo}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

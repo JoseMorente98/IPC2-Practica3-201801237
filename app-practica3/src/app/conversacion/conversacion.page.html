@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="font-family: 'Baloo';">Conversacion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of table">
+    <ion-item>
+      <img class="img-noticia" src="https://png.pngtree.com/element_our/png_detail/20181026/avatar-vector-icon-man-vector-symbol-avatar-icon-png_219941.jpg" slot="start">
+      <ion-label>
+        <strong>{{item.nombre}} {{item.apellido}}</strong>
+      </ion-label>
+      <ion-note slot="end" color="primary">{{item.cantidad}}</ion-note>
+    </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

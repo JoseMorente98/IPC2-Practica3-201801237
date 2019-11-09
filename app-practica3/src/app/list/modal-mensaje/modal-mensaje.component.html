@@ -1,0 +1,30 @@
+
+
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Nuevo Mensaje</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div style="width: 100%; height: 350px;">
+    <div class="container">
+      <img class="img-center" src="https://cdn.freebiesupply.com/logos/large/2x/rocket-chat-logo-png-transparent.png">
+    </div>
+  </div>
+  <form padding class="item item-trns" (ngSubmit)="saveChanges()">
+    <ion-item color="transparent">
+      <ion-label position="floating"><ion-icon name="contact"></ion-icon>  Mensaje</ion-label>
+      <ion-textarea rows="4" cols="20" maxlength="255" [(ngModel)]="data.cuerpo" type="text" name="cuerpo"></ion-textarea>
+    </ion-item>
+    <ion-button color="dark" expand="block"  type="submit">
+      <ion-icon name="send" slot="start"></ion-icon>
+      Enviar Mensaje
+    </ion-button>
+  </form>
+</ion-content>

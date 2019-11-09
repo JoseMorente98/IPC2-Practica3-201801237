@@ -1,0 +1,41 @@
+ion-content {
+  --background: url('https://fsb.zobj.net/crop.php?r=zrBOjedXJWr2eOsSSkC3vqXvqFrKAB9yKTHAL6AsDvkKKd56RxAE-z21ZpxzJxd_-AoubNsdooLJ2gJihMUBLVYwfegVJLFeEbQ14e_B5yjJ_HZcNhqmVAWXqSrR28mk4t30SNAVxyJdEeFPbFW1ua1fKnPnxgfWFSrLyDWxC4spH_GM9Ze1Vjl7qiA') no-repeat center center
+}
+.img-center {
+  width: auto; 
+  height: 90%;
+  border-radius: 15%;
+}
+.container { 
+  width:100%;
+  height:100%;
+  position: relative;
+}
+.container img {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+ion-footer {
+  --background: transparent;
+}
+
+.item.item-trns {
+  border-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 30px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.grid-item {
+  padding: 0px;
+  text-align: center;
+}

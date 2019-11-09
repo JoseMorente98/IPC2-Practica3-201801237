@@ -1,0 +1,7 @@
+{
+  "name": "app-practica3",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
